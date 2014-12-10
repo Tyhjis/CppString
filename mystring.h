@@ -8,17 +8,28 @@ class mystring
   char *str;
   int length;
  public:
+  // Constructors
   mystring();
   mystring(char *str);
-  int getLength();
-  char * getStr();
   mystring& operator=(char *s);
   mystring& operator=(const mystring &other);
+  
+  // Getter methods
+  int getLength();
+  char * getStr();
+
+  // Operator overloads
   char operator[](int index);
-  mystring concat(mystring s);
   mystring operator+(const mystring& start);
   mystring operator+(char *s);
+  
+  // Other funny methods
   mystring subString(int index);
+  mystring erase(char c);
+  void swap(mystring& other);
+  void replace(int index, char c);
+
+  // Input and output overloads
   friend std::ostream& operator<<(std::ostream& output, const mystring &s)
   {
     output << s.str;
@@ -29,6 +40,8 @@ class mystring
     input >> s.str;
     return input;
   }
+  
+  // Destructor
   ~mystring();
 };
 

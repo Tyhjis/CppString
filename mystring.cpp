@@ -95,14 +95,62 @@ mystring mystring::operator+(char *s)
 char mystring::operator[](int index)
 {
   if(index < 0 || index >= length){
-    throw std::out_of_range("Index out of bounds");
+    throw std::out_of_range("Index out of bounds.");
   }
   return this->str[index];
 }
 
 mystring mystring::subString(int index)
 {
-  
+  if(index < 0 || index >= length){
+    throw std::out_of_range("Index out of bounds.");
+  }
+  int newlength = length - index;
+  char *substr = new char[newlength + 1];
+  int i = index;
+  int j = 0;
+  while(this->str[i] != '\0'){
+    substr[j] = this->str[i];
+    i++;j++;
+  }
+  substr[j+1] = '\0';
+  mystring ret(substr);
+  return ret;
+}
+
+mystring mystring::erase(char c)
+{
+  char *s = new char;
+  int i = 0;
+  int j = 0;
+  while(this->str[i] != '\0'){
+    if(this->str[i] != c){
+      s[j] = this->str[i];
+      i++;j++;
+    }
+    else {
+      i++;
+    }
+  }
+  s[j+1] = '\0';
+  mystring ret(s);
+  return ret;
+}
+
+void mystring::swap(mystring& other)
+{
+  char * str = other.getStr();
+  other.str = this->str;
+  this->str = str;
+  int l = other.getLength();
+  other.length = length;
+  length = l;
+}
+
+void mystring::replace(int index, char c) {
+  if(index < 0 || index >= length){
+    throw std::out_of_range("Index out of bounds");
+  }
 }
 
 char * mystring::getStr()
