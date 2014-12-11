@@ -1,25 +1,18 @@
 #include "mystring.h"
 #include <iostream>
-
+using namespace MyString;
 int main()
 {
-  std::string s;
-  mystring str1 = "Hi";
-  mystring str2 = "World";
-  mystring str3 = str1 + "World";
-  std::cout << "str1: " << str1 << " " << str1.getLength() << "\n";
-  std::cout << "str2: " << str2 << " " << str2.getLength() << "\n";
-  char c = 'c';
-  try {
-    c = str3[9];
-  } catch(const std::out_of_range& oor) {
-    std::cerr << "Out of range error: " << oor.what() << "\n";
-  }
-  std::cout << c << "\n";
-  str1.swap(str2);
-  std::cout << "str1: " << str1 << " " << str1.getLength() << "\n"; 
-  std::cout << "str2: " << str2 << " " << str2.getLength() << "\n";
-  str1.replace(0, 'B');
-  std::cout << "str1: " << str1 << " " << str1.getLength() << "\n";
+  mystring str;
+  mystring str2;
+  std::cout << "First string pls:\n";
+  std::cin >> str;
+  std::cout << "First string is: " << str << "\n";
+  std::cout << "Second string pls:\n";
+  std::cin >> str2;
+  std::cout << "Second string is: " << str2 << "\n";
+  mystring str3 = str + str2;
+  std::cout << "Catenated string is:\n";
+  std::cout << str3 << " " << str3.getLength()  << "\n";
   return 0;
 }
