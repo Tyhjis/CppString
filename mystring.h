@@ -40,8 +40,7 @@ namespace MyString
     }
     friend std::istream& operator>>(std::istream& input, mystring &s)
     {
-      input >> s.str;
-      return input;
+      
     }
   
     // Destructor
