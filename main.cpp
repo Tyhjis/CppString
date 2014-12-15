@@ -1,18 +1,29 @@
 #include "mystring.h"
 #include <iostream>
+#include <assert.h>
+#include "testclass.h"
 using namespace MyString;
 int main()
 {
-  mystring str;
-  mystring str2;
-  std::cout << "First string pls:\n";
-  std::cin >> str;
-  std::cout << "First string is:\n" << str << " " << str.getLength() << "\n";
-  std::cout << "Second string pls:\n";
-  std::cin >> str2;
-  std::cout << "Second string is:\n" << str2 << " " << str2.getLength() << "\n";
-  mystring str3 = str + str2;
-  std::cout << "Catenated string is:\n";
-  std::cout << str3 << " " << str3.getLength()  << "\n";
-  return 0;
+	std::cout << "This is the program for testing my own string class.\n";
+	testclass test;
+	test.testconstructor();
+	test.testconstructor2();
+	test.testconstructor3();
+	test.testcatenate();
+	test.testcatenate2();
+	test.testlength();
+	test.testsubstr();
+	test.testaccessoperator();
+	test.testswap();
+	test.testerase();
+	test.testreplace();
+	test.testpushback();
+	test.testcompare();
+	test.testcompare2();
+	mystring str;
+	std::cout << "Now let's test input by manually:\nPlease give a string:\n";
+	std::cin >> str;
+	std::cout << "Here is the string you gave: " << str << "\nI hope it's correct.\nProgram ends.\n";
+    return 0;
 }

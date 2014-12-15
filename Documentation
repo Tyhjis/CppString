@@ -1,0 +1,49 @@
+Hello! This is my attempt at making my own c++ string class.
+The class is called "mystring" and it has following features:
+
+Author: Kristian Hansson
+Constructors:
+//examples
+mystring str("Hello"); //literal constructor
+mystring str(char *s); //takes char pointer
+mystring str = "Hello"; //literal = constructor
+mystring str(mystring str); //copy constructor
+mystring str = mystring str; //copy = constructor
+
+Input (>>) and output (<<)
+
+mystring catenation (operator +):
+mystring str = "Hello";
+str = str + "World"; // Now str has the value "HelloWorld"
+mystring str2 = "AndUniverse";
+str = str + str2; // Now str has the value "HelloWorldAndUniverse"
+
+Substring:
+mystring subString():
+//examples
+mystring str = "Hello";
+str = str.subString(2); // Now str has the value "llo"
+
+push_back(char c)
+
+char Access ([] operator) (int index)
+Returns the character at the given index. Throws exception if index is out of bounds.
+
+mystring replace(int index, char c) 
+Returns a new mystring with replaced character at given index. Throws exception if index is out of bounds.
+
+int getLength()
+Returns the length of the string.
+
+Swap:
+Swaps the contents of two mystring objects.
+
+All the features are tested automatically except for the input and output operators.
+Tests are simple assertions. Using assert.h.
+
+Issues:
+The mystring class destructor does not delete the char *str which contains the string.
+I tried different ways of somehow destroying it, but didn't have enough time.
+
+Access and modify ([] =) feature is not implemented. Replace method implemented instead.
+Iterators are not implemented as well. (Forgot)

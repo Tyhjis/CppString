@@ -8,7 +8,6 @@ namespace MyString
   {
   private:
     char *str;
-    int length;
   public:
     // Constructors
     mystring();
@@ -24,12 +23,14 @@ namespace MyString
     char operator[](int index);
     mystring operator+(const mystring& start);
     mystring operator+(char *s);
+    bool operator==(const mystring& other);
+    bool operator==(const char *s);
   
     // Other funny methods
     mystring subString(int index);
     mystring erase(char c);
     void swap(mystring& other);
-    void replace(int index, char c);
+    mystring replace(int index, char c);
     void push_back(char c);
 
     // Input and output overloads
@@ -40,7 +41,10 @@ namespace MyString
     }
     friend std::istream& operator>>(std::istream& input, mystring &s)
     {
-      
+      char * str = new char[256];
+      input.getline(str, 256);
+      s = str;
+      return input;
     }
   
     // Destructor

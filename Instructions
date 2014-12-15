@@ -1,0 +1,12 @@
+These are the instructions to my own attempt at making a string class 
+and writing automated tests for it.
+You need g++ compiler. This project was tested on linux.
+You can compile the project by running the "compile.sh" script. Keep the 
+script in its original location. After compiling you can run the program
+by writing ./mystringtest on the command line. You might have to change
+execution rights for the script.
+The program tests string input manually so in order to finish the program,
+you will have to write something on the command line when the program
+asks.
+
+- Kristian Hansson
